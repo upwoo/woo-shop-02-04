@@ -432,13 +432,22 @@ section#cotegory .wrapper .item .item-box .name span {
     text-align: left;
     padding: 10px 0;
 }
+.added_to_cart.wc-forward{
+    display: none !important;
+}
 .product .price span {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    /* identical to box height */
+    padding-right: 10px;
     color: #000000;
+}
+del {
+    opacity: 0.5;
+}
+del span {
+    font-weight: 300;
 }
 .product .button a.btn {
     background: #006633;
@@ -694,6 +703,7 @@ section.catalog .wrapper-in .item-in .sidebar .sidevar__wrapper-price .sidebar__
     padding: 20px;
     box-sizing: border-box;
 }
+
 section.catalog .wrapper-in .item-in .sidebar .sidevar__wrapper-price .sidevar__wrapper-price .sidebar__wrapper-content input {
     background: #F6F6F6;
     border-radius: 3px;
@@ -767,11 +777,12 @@ section.catalog .custom-checkbox:disabled + label::before {
 .product-listing .columns-3 {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: space-between;
 }
 .product-listing .columns-3 li.product {
     width: 31%;
-    padding: 0 10px 20px;
+    padding: 0 0 20px;
 }
 .product-listing .columns-3 li.product .shop-item-inner {
     padding: 40px 30px 20px;
@@ -787,6 +798,8 @@ section.catalog .custom-checkbox:disabled + label::before {
     text-align: center;
     padding-bottom: 20px;
     border-bottom: 1px solid #d3d3d3;
+    display: flex;
+    justify-content: center;
 }
 .product-listing .columns-3 li.product .shop-item-inner .shop-item__badges {
     position: absolute;
@@ -814,15 +827,18 @@ section.catalog .custom-checkbox:disabled + label::before {
     line-height: 20px;
     color: #000000;
 }
-.product-listing .columns-3 li.product .shop-item-inner .shop-item__price {
+.product-listing .columns-3 li.product .shop-item-inner .simpleCart_shelfItem {
     padding-bottom: 20px;
 }
-.product-listing .columns-3 li.product .shop-item-inner .shop-item__price span.price {
+.product-listing .columns-3 li.product .shop-item-inner .simpleCart_shelfItem span.price {
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 20px;
     color: #000000;
+}
+.product-listing .columns-3 li.product .shop-item-inner .shop-item__button {
+    width: 80%;
 }
 .product-listing .columns-3 li.product .shop-item-inner .shop-item__button a.viwe {
     background: #006633;
@@ -1091,18 +1107,26 @@ section.catalog .custom-checkbox:disabled + label::before {
     transition: all 0.2s;
     cursor: pointer;
 }
-.product-container .shop-item__price {
+.product-container .simpleCart_shelfItem {
     margin-left: 50px;
     display: flex;
     align-items: center;
 }
-.product-container .shop-item__price span bdi {
+.product-container .simpleCart_shelfItem span bdi {
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     /* identical to box height */
     color: #000000;
+}
+.onsale {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #0f834d;
+    color: #fff;
+    padding: 5px 10px;
 }
 .product-container button.single_add_to_cart_button {
     background: #006633;
@@ -1256,6 +1280,7 @@ section.catalog .custom-checkbox:disabled + label::before {
     top: 0;
     left: 180px;
 }
+
 .woocommerce-content p {
     margin: 0;
 }
@@ -1487,7 +1512,7 @@ section.catalog .custom-checkbox:disabled + label::before {
         font-size: 14px;
     }
     .product .price span {
-        font-style: 12px;
+        fonts-size: 12px;
     }
     .button-s {
         padding: 40px 20px 0;
@@ -1715,7 +1740,7 @@ section.catalog .custom-checkbox:disabled + label::before {
         flex-wrap: wrap;
         padding: 0;
     }
-    .product-container .shop-item__price {
+    .product-container .simpleCart_shelfItem {
         margin: 0 0 0 40px;
     }
     .product-container button.single_add_to_cart_button {
@@ -1724,7 +1749,7 @@ section.catalog .custom-checkbox:disabled + label::before {
     .product-container button.single_add_to_cart_button {
         margin-top: 20px;
     }
-    .product-container .shop-item__price {
+    .product-container .simpleCart_shelfItem {
         width: 50%;
     }
     .woocommerce-tabs ul.tabs {

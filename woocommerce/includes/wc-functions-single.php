@@ -131,4 +131,68 @@ add_action( 'woocommerce_output_related_products_args', function ($arg ){
 	return $arg;
 } );
 
+/**
+ * hook for single item in shop, index and more page
+ */
+add_action ('woocommerce_before_shop_loop_item', 'start_shop_loop_item_product');
+function start_shop_loop_item_product () {
+    echo '<div class="shop-item-inner">' . '<div class="shop-item__image">' . '<div class="shop-item__image-inner">';
+}
+add_action ('woocommerce_before_shop_loop_item_title', 'start_shop_loop_item_product_title');
+function start_shop_loop_item_product_title () {
+            echo '</div>';
+        echo '</div>';
+    echo '<div class="shop-item__title">';
+    ?>
+
+    <?php
+}
+add_action('woocommerce_after_shop_loop_item_title', 'end_shop_loop_item_product_title', 5);
+function end_shop_loop_item_product_title() {
+    echo '</div>';
+}
+add_action('woocommerce_after_shop_loop_item', 'woocommerce_after_shop_loop_item_start', 10);
+function woocommerce_after_shop_loop_item_start() {
+    echo '<div class="shop-item__button flex">';
+}
+
+add_action('woocommerce_after_shop_loop_item', 'woocommerce_after_shop_loop_item_end', 5);
+function woocommerce_after_shop_loop_item_end() {
+    echo '<div class="shop-item__button flex" style="width: 100%; margin: 20px 0 0; ">';
+}
+
+
+
+
+/*Удаляем кнопку Добавить в корзину */
+function remove_loop_button(){
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+}
+add_action('init','remove_loop_button');
+
+/* Добавляем кнопку подробнее*/
+add_action('woocommerce_after_shop_loop_item','replace_add_to_cart');
+function replace_add_to_cart() {
+    global $product;
+    $link = $product->get_permalink();
+    echo do_shortcode('<a href="'.$link.'" class="button addtocartbutton viwe">Подробнее</a>');
+}
+/* Добавляем кнопку в Корзину*/
+add_action( 'after_setup_theme', 'lets_add_cart_button' );
+function lets_add_cart_button() {
+    add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 50 );
+}
+
+/*Удаление кнопки подробнее*/
+add_action( 'woocommerce_after_shop_loop_item', 'add_my_morebutton', 50);
+function add_my_morebutton( ) {
+
+}
+
+
+add_filter( 'wc_add_to_cart_message', 'remove_add_to_cart_message' );
+
+function remove_add_to_cart_message() {
+    return;
+}
 
