@@ -562,23 +562,24 @@ footer .menu .item .item-s a {
 .breadcrumbs .wrapper ul.crumbs {
     display: flex;
 }
-.breadcrumbs .wrapper ul.crumbs li {
-    padding: 0 5px;
+.crumbs span {
+    padding: 0 5px 0 0;
     font-style: normal;
     font-weight: 300;
     font-size: 10px;
     line-height: 12px;
     color: #000000;
 }
-.breadcrumbs .wrapper ul.crumbs li a {
+.crumbs span {
     font-style: normal;
     font-weight: 300;
     font-size: 10px;
     line-height: 12px;
     color: #000000;
-}
-.breadcrumbs .wrapper ul.crumbs li a.active {
     color: #A3A3A3;
+}
+.crumbs span  a {
+    color: #000000;
 }
 
 section.catalog {
@@ -1287,10 +1288,14 @@ section.catalog .custom-checkbox:disabled + label::before {
 .single-content {
     width: 813px;
     margin: 0 auto;
-    padding-bottom: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
 }
 .single-content .title {
-    padding: 46px 0;
+    padding: 20px 0 40px;
 }
 .single-content .title h1 {
     font-style: normal;
@@ -1571,9 +1576,7 @@ section.catalog .custom-checkbox:disabled + label::before {
     .product .price span {
         fonts-size: 12px;
     }
-    .button-s {
-        padding: 40px 20px 0;
-    }
+
     .title-section h2 {
         font-size: 22px;
     }

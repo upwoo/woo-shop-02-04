@@ -164,13 +164,10 @@ get_header(); ?>
         <div class="wrapper flex sp-between al-center">
             <?php
             // запрос
-            $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+            $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>3)); ?>
 
             <?php if ( $wpb_all_query->have_posts() ) : ?>
 
-                <ul>
-
-                    <!-- the loop -->
                     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
                         <div class="item">
                             <a href="<?php the_permalink(); ?>">
@@ -186,9 +183,7 @@ get_header(); ?>
                             </a>
                         </div>
                     <?php endwhile; ?>
-                    <!-- end of the loop -->
 
-                </ul>
 
                 <?php wp_reset_postdata(); ?>
 

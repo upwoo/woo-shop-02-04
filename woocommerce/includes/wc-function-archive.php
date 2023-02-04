@@ -6,6 +6,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action( 'woocommerce_before_main_content', 'estore_archive_wrapper_start', 40 );
 function estore_archive_wrapper_start(){
 ?>
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="wrapper">
+                <?php
+                /* breadcrumb Yoast */
+                if ( function_exists( 'yoast_breadcrumb' ) ) :
+                    yoast_breadcrumb( '<div id="breadcrumbs" class="crumbs">', '</div>' );
+                endif;
+                ?>
+            </div>
+        </div>
+    </div>
     <section class="content catalog listing-product">
         <div class="container">
             <div class="wrapper">
@@ -189,11 +201,11 @@ add_filter('woocommerce_catalog_orderby', 'wc_customize_product_sorting');
 
 function wc_customize_product_sorting($sorting_options){
     $sorting_options = array(
+        'menu_order' => __( 'По умолчанию', 'woocommerce' ),
         'price'      => __( 'Дешевле', 'woocommerce' ),
         'price-desc' => __( 'Дороже', 'woocommerce' ),
          'date'       => __( 'Новинки', 'woocommerce' ),
         'popularity' => __( 'Хит', 'woocommerce' ),
-        'menu_order' => __( 'По умолчанию', 'woocommerce' ),
 
     );
 

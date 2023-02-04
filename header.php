@@ -93,7 +93,7 @@
                     <div class="menu">
                         <ul class="nav flex al-center">
                             <li class="item">
-                                <a href="" class="btn-menu">
+                                <a href="/catalog-product/" class="btn-menu">
                                     <svg width="32" height="19" viewBox="0 0 32 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="32" height="3" rx="1.5" fill="#33CC33"/>
                                         <rect y="8" width="32" height="3" rx="1.5" fill="#33CC33"/>
@@ -103,22 +103,22 @@
                                 </a>
                             </li>
                             <li class="item">
-                                <a href="">
+                                <a href="/uslugi">
                                     Услуги
                                 </a>
                             </li>
                             <li class="item">
-                                <a href="">
+                                <a href="/informaciya">
                                     Информация
                                 </a>
                             </li>
                             <li class="item">
-                                <a href="">
+                                <a href="/zakaz-i-dostavka/">
                                     Заказ и доставка
                                 </a>
                             </li>
                             <li class="item">
-                                <a href="">
+                                <a href="/kontakty">
                                     Контакты
                                 </a>
                             </li>
