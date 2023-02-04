@@ -600,10 +600,13 @@ section.catalog .wrapper .header__title .title h1 {
 }
 section.catalog .wrapper-in .item-in {
     width: 323px;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 section.catalog .wrapper-in .item-in .title {
     padding-bottom: 40px;
+}
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item > label > a {
+    font-size: 14px;
 }
 section.catalog .wrapper-in .item-in .title span {
     font-style: normal;
@@ -637,7 +640,7 @@ section.catalog .wrapper-in .item-in .sidebar .sidevar__wrapper-radio {
 section.catalog .wrapper-in .item-in .sidebar .sidevar__wrapper-radio .sidebar__wrapper-title {
     padding: 20px 0;
 }
-section.catalog .wrapper-in .item-in .sidebar .sidevar__wrapper-radio .sidebar__wrapper-title span {
+h4.filter-title{
     font-style: normal;
     font-weight: 700;
     font-size: 15px;
@@ -757,10 +760,56 @@ section.catalog .custom-checkbox + label::before {
     top: 7px;
     position: relative;
 }
-section.catalog .custom-checkbox:checked + label::before {
-    background-image: url("assets/img/bg-checkbox.png");
+.yith-wcan-filters.custom-style span.checkboxbutton.checked:before{
+    background-image: url("assets/img/bg-checkbox.png") !important;
     background-position: 50% 50%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
+    background-color: #fff;
+}
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item .checkboxbutton.checked:before {
+    background-color: #fff;
+    border-color: #D7D7D7;
+}
+.yith-wcan-filters.custom-style span.radiobutton:before {
+    width: 100% !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    height: 30px !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+ul.filter-radio  .filter-item {
+    width: 48%;
+}
+ul.filter-radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.filter-radio .filter-item> label > a {
+    font-size: 12px !important;
+    position: absolute;
+
+    margin-left: auto;
+    margin-right: 7px;
+    left: 0;
+    right: 0;
+    top: -3px;
+    text-align: center;
+}
+.filter-radio .filter-item.active > label > a {
+    color: #fff !important;
+}
+
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item .radiobutton.checked:before {
+    background: #006633 !important;
+    border-color: #006633 !important;
+}
+.filter-content ul.filter-items .radio label {
+    position: relative;
+}
+.yith-wcan-filters.custom-style span.checkboxbutton:before {
+    border-radius: 0 !important;
 }
 section.catalog .custom-checkbox:not(:disabled):active + label::before {
     background-color: #b3d7ff;
@@ -907,7 +956,13 @@ section.catalog .custom-checkbox:disabled + label::before {
     background: #006633;
     color: #fff;
 }
-
+.filter-title {
+    padding-bottom: 20px;
+}
+.yith-wcan-filters .yith-wcan-filter {
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 20px;
+}
 .woocommerce-ordering {
     padding: 0 0 35px;
 }
@@ -1125,6 +1180,7 @@ section.catalog .custom-checkbox:disabled + label::before {
     right: 20px;
     background: #0f834d;
     color: #fff;
+    font-size: 10px;
     padding: 5px 10px;
 }
 .product-container button.single_add_to_cart_button {

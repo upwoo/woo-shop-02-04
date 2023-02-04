@@ -144,77 +144,7 @@ function filtr_wordpress() {
                             <span>Фильтры</span>
                         </div>
                         <div class="sidebar">
-                            <div class="sidebar__wrapper-checkbox">
-                                <div class="sidebar__wrapper-title">
-                                    <span>Вид</span>
-                                </div>
-                                <div class="sidebar__wrapper-content">
-                                    <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-                                    <label for="happy">Барбарис</label>
-                                    <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-                                    <label for="happy">Дёрен</label>
-                                    <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-                                    <label for="happy">Спирея</label>
-                                    <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-                                    <label for="happy">Барбарис</label>
-                                    <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-                                    <label for="happy">Барбарис</label>
-                                </div>
-                            </div>
-                            <div class="sidevar__wrapper-radio">
-                                <div class="sidebar__wrapper-title">
-                                    <span>Вариант</span>
-                                </div>
-                                <div class="sidebar__wrapper-content">
-                                    <div class="form_radio_btn">
-                                        <input id="radio-1" type="radio" name="radio" value="1" checked>
-                                        <label for="radio-1">Р9</label>
-                                    </div>
-
-                                    <div class="form_radio_btn">
-                                        <input id="radio-2" type="radio" name="radio" value="2">
-                                        <label for="radio-2">С1-1,5</label>
-                                    </div>
-
-                                    <div class="form_radio_btn">
-                                        <input id="radio-3" type="radio" name="radio" value="3">
-                                        <label for="radio-3">С2-3</label>
-                                    </div>
-
-                                    <div class="form_radio_btn">
-                                        <input id="radio-4" type="radio" name="radio" value="4">
-                                        <label for="radio-4">С4-6</label>
-                                    </div>
-
-                                    <div class="form_radio_btn">
-                                        <input id="radio-5" type="radio" name="radio" value="5">
-                                        <label for="radio-5">С7-10</label>
-                                    </div>
-
-
-                                    <div class="form_radio_btn">
-                                        <input id="radio-6" type="radio" name="radio" value="6">
-                                        <label for="radio-6">Луковицы</label>
-                                    </div>
-
-                                    <div class="form_radio_btn">
-                                        <input id="radio-7" type="radio" name="radio" value="7">
-                                        <label for="radio-7">ОКС</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sidevar__wrapper-price">
-                                <div class="sidebar__wrapper-title">
-                                    <span>Цена</span>
-                                </div>
-                                <div class="sidebar__wrapper-content flex">
-                                    <input type="text" placeholder="от">
-                                    <input type="text" placeholder="до">
-                                </div>
-                            </div>
-                            <div class="btn__filter">
-                                <a href="" class="btn">Сбросить</a>
-                            </div>
+                            <?php echo do_shortcode('[yith_wcan_filters slug="default-preset"]'); ?>
                         </div>
                     </div>
     <?php
