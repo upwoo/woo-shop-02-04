@@ -9,11 +9,6 @@ function crb_load() {
 	\Carbon_Fields\Carbon_Fields::boot();
 }
 
-add_action( 'carbon_fields_register_fields', 'estore_register_custom_fields' );
-function estore_register_custom_fields() {
-	require get_template_directory() . '/includes/custom-fields-options/metabox.php';
-	require get_template_directory() . '/includes/custom-fields-options/theme-optons.php';
-}
 
 /*
  * Подключение настроек темы

@@ -108,7 +108,7 @@ ul.nav-menu {
 }
 
 header .header-top {
-    background: url("../img/bg-header.png");
+    background: url("assets/img/bg-header.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -142,7 +142,7 @@ header .header-top .wrapper .h__top .h__top-search input[type=submit] {
     font-size: 0;
     width: 18px;
     height: 18px;
-    background: url("../img/search.svg");
+    background: url("assets/img/search.svg");
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
@@ -748,7 +748,7 @@ section.catalog .custom-checkbox + label::before {
     position: relative;
 }
 section.catalog .custom-checkbox:checked + label::before {
-    background-image: url("../img/bg-checkbox.png");
+    background-image: url("assets/img/bg-checkbox.png");
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }

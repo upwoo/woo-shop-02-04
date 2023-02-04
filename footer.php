@@ -9,6 +9,7 @@
  * @package estore
  */
 ?>
+</main>
 <footer>
     <div class="container">
         <div class="wrapper flex">
