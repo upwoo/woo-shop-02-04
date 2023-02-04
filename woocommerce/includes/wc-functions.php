@@ -9,16 +9,12 @@ function estore_add_sidebar_only_archive() {
 	}
 }
 
-add_action( 'woocommerce_before_main_content', 'estore_add_breadcrumbs', 20 );
-function estore_add_breadcrumbs(){
-	?>
-	<div class="breadcrumb_dress">
-		<div class="container">
-			<?php woocommerce_breadcrumb(); ?>
-		</div>
-	</div>
-	<?php
+add_action( 'init', 'z_remove_wc_breadcrumbs');
+function z_remove_wc_breadcrumbs() {
+    remove_action( 'storefront_before_content', 'woocommerce_breadcrumb', 10);
 }
+
+
 
 add_action( 'wp_enqueue_scripts', 'estore_woocommerce_scripts' );
 function estore_woocommerce_scripts() {
@@ -41,18 +37,7 @@ function estore_woocommerce_scripts() {
 add_action( 'wp_footer', 'estore_modal_window' );
 function estore_modal_window(){
 	?>
-	<div class="modal video-modal fade" id="modal-product" tabindex="-1" role="dialog" aria-labelledby="modal-product">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				</div>
-				<section>
-				
-				</section>
-			</div>
-		</div>
-	</div>
+
 	<?php
 }
 
