@@ -65,3 +65,4 @@ if ( ! function_exists( 'estore_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+

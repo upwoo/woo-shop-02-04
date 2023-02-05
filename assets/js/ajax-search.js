@@ -1,35 +1,35 @@
 jQuery(function ($) {
-    $('.search_form input[name="s"]').on('keyup', function () {
-        var search = $('.search_form input[name="s"]').val();
-        if (search.length < 4) {
-            return false;
+    const search_input = $(".search-form__input");
+    const search_results = $(".ajax-search");
+
+    search_input.keyup(function () {
+        let search_value = $(this).val();
+
+        if (search_value.length > 2) { // кол-во символов
+            $.ajax({
+                url: "/wp-admin/admin-ajax.php",
+                type: "POST",
+                data: {
+                    "action": "ajax_search", // functions.php
+                    "term": search_value
+                },
+                success: function (results) {
+                    search_results.fadeIn(200).html(results);
+                }
+            });
+        } else {
+            search_results.fadeOut(200);
         }
-        var data = {
-            s:search,
-            action: 'search_action',
-            nonce : search_form.nonce
+    });
 
+    // Закрытие поиска при клике вне его
+    $(document).mouseup(function (e) {
+        if (
+            (search_input.has(e.target).length === 0) &&
+            (search_results.has(e.target).length === 0)
+        ) {
+            search_results.fadeOut(200);
         };
-        $.ajax({
-            url: search_form.url,
-            data :data,
-            type:'POST',
-            dataType:'json',
-            beforeSend:function(xhr){
-                $('.search-result-close').text('Ищем...');
-            },
-            success:function(data){
-                $('.search-result-close').text('Очистить');
-                $('.search_form').css('overflow', 'visible');
-
-                $('.search_form .search-result').html(data.out);
-                $('.search-result').addClass('search-result-over');
-
-
-
-            }
-        });
-
     });
 
     $('.search-result-close').click(function () {
@@ -37,4 +37,33 @@ jQuery(function ($) {
         $('.search-result').empty();
         $('.search_form input[name="s"]').val('');
     })
+    $( 'body' ).on( 'click', 'button.plus, button.minus', function() {
+
+        var qty = $(this).parent().find( 'input' ),
+            val = parseInt( qty.val() ),
+            min = parseInt( qty.attr( 'min' ) ),
+            max = parseInt( qty.attr( 'max' ) ),
+            step = parseInt( qty.attr( 'step' ) );
+
+        // дальше меняем значение количества в зависимости от нажатия кнопки
+        if ( $( this ).is( '.plus' ) ) {
+            if ( max && ( max <= val ) ) {
+                qty.val( max );
+            } else {
+                qty.val( val + step );
+            }
+        } else {
+            if ( min && ( min >= val ) ) {
+                qty.val( min );
+            } else if ( val > 1 ) {
+                qty.val( val - step );
+            }
+        }
+
+    });
+
 });
+
+
+
+

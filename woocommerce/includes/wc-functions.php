@@ -73,3 +73,14 @@ function estore_account_menu_items( $items ) {
 
 	return $items;
 }
+
+add_action( 'woocommerce_before_quantity_input_field', 'truemisha_quantity_plus', 25 );
+add_action( 'woocommerce_after_quantity_input_field', 'truemisha_quantity_minus', 25 );
+
+function truemisha_quantity_plus() {
+	echo '<button type="button" class="plus">+</button>';
+}
+
+function truemisha_quantity_minus() {
+	echo '<button type="button" class="minus">-</button>';
+}

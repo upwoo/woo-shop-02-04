@@ -119,9 +119,6 @@ get_header(); ?>
         <div class="product-listing">
             <?php echo do_shortcode('[products limit="3" columns="3" orderby="popularity" class="quick-sale"]'); ?>
         </div>
-        <div class="button-s">
-            <a href="" class="viwe">Посмотреть все новики</a>
-        </div>
     </div>
 </section>
 <section id="new">
@@ -134,9 +131,6 @@ get_header(); ?>
         <div class="product-listing">
             <?php echo do_shortcode('[products limit="3" columns="3" orderby="popularity" class="quick-sale" top_rated="true" ]'); ?>
         </div>
-        <div class="button-s">
-            <a href="" class="viwe">Посмотреть все товары</a>
-        </div>
     </div>
 </section>
 <section id="new">
@@ -148,9 +142,6 @@ get_header(); ?>
         </div>
         <div class="product-listing">
             <?php echo do_shortcode('[products limit="3" columns="3" orderby="popularity" class="quick-sale" on_sale="true" ]'); ?>
-        </div>
-        <div class="button-s">
-            <a href="" class="viwe">Посмотреть все новики</a>
         </div>
     </div>
 </section>
@@ -192,7 +183,7 @@ get_header(); ?>
             <?php endif; ?>
 
         </div>
-        <div class="button-s">
+        <div class="button-s" style="padding-top: 50px;">
             <a href="/blog" class="viwe">Перейти в блог</a>
         </div>
     </div>

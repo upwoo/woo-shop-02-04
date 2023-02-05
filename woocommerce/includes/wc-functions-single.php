@@ -26,7 +26,8 @@ function estore_wrapper_product_end() {
 add_action( 'woocommerce_before_single_product_summary', 'estore_wrapper_product_image_start', 5 );
 function estore_wrapper_product_image_start() {
 	?>
-	<div class="col-md-4 single-left">
+    <div class="product-container">
+	    <div class="product-images">
 	<?php
 }
 
@@ -40,15 +41,15 @@ function estore_wrapper_product_image_end() {
 add_action( 'woocommerce_before_single_product_summary', 'estore_wrapper_product_entry_start', 30 );
 function estore_wrapper_product_entry_start() {
 	?>
-	<div class="col-md-8 single-right">
+	<div class="product-info">
 	<?php
 }
 
 add_action( 'woocommerce_after_single_product_summary', 'estore_wrapper_product_entry_end', 5 );
 function estore_wrapper_product_entry_end() {
 	?>
-	</div>
-	<div class="clearfix"></div>
+	    </div>
+    </div>
 	<?php
 }
 
@@ -196,3 +197,11 @@ function remove_add_to_cart_message() {
     return;
 }
 
+add_action ('woocommerce_single_product_summary', 'woocommerce_single_product_summary_start');
+function woocommerce_single_product_summary_start($content) {
+    ?>
+    <div class="woocommerce-product-details__short-description">
+        <p><?php echo $content; ?></p>
+    </div>
+<?php
+}

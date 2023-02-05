@@ -13,7 +13,12 @@ function estore_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'estore_styles' );
 function estore_styles() {
-
+    wp_enqueue_script('countdown' , get_template_directory_uri() . '/assets/js/jquery.countdown.js', array('jquery'), THEME_VER, true);
+    wp_enqueue_script('easyResponsiveTabs' , get_template_directory_uri() . '/assets/js/easyResponsiveTabs.js', array('jquery'), THEME_VER, true);
+    wp_enqueue_script('flexisel' , get_template_directory_uri() . '/assets/js/jquery.flexisel.js', array('jquery'), THEME_VER, true);
+    wp_enqueue_script('flexslider' , get_template_directory_uri() . '/assets/js/jquery.flexslider.js', array('jquery'), THEME_VER, true);
+    wp_enqueue_script('magnific-popup' , get_template_directory_uri() . '/assets/js/jquery.magnific-popup.js', array('jquery'), THEME_VER, true);
+    wp_enqueue_script('wmuSlider' , get_template_directory_uri() . '/assets/js/jquery.wmuSlider.js', array('jquery'), THEME_VER, true);
     wp_enqueue_script('swiper' , 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array('jquery'), THEME_VER, true);
 	wp_enqueue_script('ajax-search' , get_template_directory_uri() . '/assets/js/ajax-search.js', array('jquery'), THEME_VER, true);
 	wp_localize_script('ajax-search', 'search_form' , array(

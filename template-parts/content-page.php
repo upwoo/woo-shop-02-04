@@ -8,9 +8,27 @@
  */
 
 ?>
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="wrapper">
+            <?php
+            /* breadcrumb Yoast */
+            if ( function_exists( 'yoast_breadcrumb' ) ) :
+                yoast_breadcrumb( '<div id="breadcrumbs" class="crumbs">', '</div>' );
+            endif;
+            ?>
+        </div>
+    </div>
+</div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+        <div class="content-in">
+            <div class="container">
+                <div class="title">
 		<?php the_title( '<h1 class="entry-title margin-bottom-lg">', '</h1>' ); ?>
+                </div>
+            </div>
+        </div>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -24,26 +42,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-				edit_post_link(
-					sprintf(
-						wp_kses(
-							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'estore' ),
-							array(
-								'span' => array(
-									'class' => array(),
-								),
-							)
-						),
-						get_the_title()
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
